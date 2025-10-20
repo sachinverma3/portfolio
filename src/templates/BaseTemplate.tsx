@@ -1,10 +1,9 @@
-import { useTranslations } from 'next-intl'; 
+ 
 export const BaseTemplate = (props: {
   leftNav: React.ReactNode;
   rightNav?: React.ReactNode;
   children: React.ReactNode;
-}) => {
-  const t = useTranslations('BaseTemplate');
+}) => { 
 
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
