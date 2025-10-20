@@ -11,50 +11,52 @@ export const BaseTemplate = (props: {
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
       <div className="mx-auto max-w-screen-md">
-        <header className="border-b border-gray-300">
-          <div className="pt-16 pb-8">
-            <h1 className="text-3xl font-bold text-gray-900">
-              {AppConfig.name}
-            </h1>
-            <h2 className="text-xl">{t('description')}</h2>
-          </div>
-
-          <div className="flex justify-between">
-            <nav aria-label="Main navigation">
-              <ul className="flex flex-wrap gap-x-5 text-xl">
-                {props.leftNav}
-              </ul>
-            </nav>
-
-            <nav>
-              <ul className="flex flex-wrap gap-x-5 text-xl">
-                {props.rightNav}
-              </ul>
-            </nav>
-          </div>
-        </header>
-
         <main>{props.children}</main>
 
-        <footer className="border-t border-gray-300 py-8 text-center text-sm">
-          {`© Copyright ${new Date().getFullYear()} ${AppConfig.name}. `}
-          {t.rich('made_with', {
-            author: () => (
-              <a
-                href="https://nextjs-boilerplate.com"
-                className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-              >
-                Next.js Boilerplate
-              </a>
-            ),
-          })}
-          {/*
-           * PLEASE READ THIS SECTION
-           * I'm an indie maker with limited resources and funds, I'll really appreciate if you could have a link to my website.
-           * The link doesn't need to appear on every pages, one link on one page is enough.
-           * For example, in the `About` page. Thank you for your support, it'll mean a lot to me.
-           */}
+        <footer className="border-t border-gray-200 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 py-8 px-4 text-center">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Built with <span className="text-rose-500 animate-pulse">♥</span> using
+            </p>
+
+            <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center gap-1">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                  alt="Next.js"
+                  className="w-5 h-5"
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300">Next.js</span>
+              </div>
+
+              <div className="flex items-center gap-1">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+                  alt="Tailwind"
+                  className="w-5 h-5"
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300">Tailwind</span>
+              </div>
+
+              <div className="flex items-center gap-1">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                  alt="TypeScript"
+                  className="w-5 h-5"
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300">TypeScript</span>
+              </div>
+            </div>
+
+            <div className="mt-3 text-xs text-gray-400 dark:text-gray-500">
+              © {new Date().getFullYear()} Crafted by{" "}
+              <span className="font-medium text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+                Sachin Verma
+              </span>
+            </div>
+          </div>
         </footer>
+
       </div>
     </div>
   );

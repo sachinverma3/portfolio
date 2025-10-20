@@ -9,7 +9,7 @@
   },
   "BaseTemplate": {
     "description": "",
-    "made_with": "Made with <author></author>."
+    "made_with": ""
   },
   "Index": {
     "meta_title": "Next.js Boilerplate Presentation",
