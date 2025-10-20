@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import ContactCard from "@/components/ContactCard";
-import { FaWhatsapp } from "react-icons/fa";
-import { main } from "knip";
-
+import { FaWhatsapp } from "react-icons/fa"; 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-800 relative">
