@@ -8,6 +8,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-800 relative">
       {/* Header */}
       <header className="flex justify-between items-center py-6 px-8 border-b border-gray-200 backdrop-blur-sm">
+        
         <h1 className="text-2xl font-bold tracking-tight">Sachin Verma</h1>
         <nav className="flex gap-8 text-gray-600 text-sm">
           <a href="#about" className="hover:text-gray-900 transition-colors">
