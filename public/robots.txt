@@ -1,0 +1,14 @@
+# robots.txt for fullstackjobsupport.com
+User-agent: *
+Allow: /
+
+# Block private files or folders (optional)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://fullstackjobsupport.com/sitemap.xml
+
+# Canonical domain
+Host: https://fullstackjobsupport.com
