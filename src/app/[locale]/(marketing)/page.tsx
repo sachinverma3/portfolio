@@ -40,10 +40,16 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* ✅ Mobile Toggle Menu (Drawer Style) */}
+      {/* ✅ Mobile Toggle Menu (Drawer Style with Click Outside Close) */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40 flex justify-end">
-          <div className="bg-white w-2/3 max-w-xs h-full shadow-xl p-6 flex flex-col space-y-6 text-gray-700 text-lg animate-slideIn">
+        <div
+          className="fixed inset-0 bg-black/50 z-40 flex justify-end"
+          onClick={() => setMenuOpen(false)} // 👈 Clicking overlay closes menu
+        >
+          <div
+            className="bg-white w-2/3 max-w-xs h-full shadow-xl p-6 flex flex-col space-y-6 text-gray-700 text-lg animate-slideIn"
+            onClick={(e) => e.stopPropagation()} // 👈 Prevent close when clicking inside
+          >
             <a
               href="#about"
               onClick={() => setMenuOpen(false)}
