@@ -17,6 +17,10 @@ export const metadata = {
     description:
       "Freelance developer providing remote job support, consulting, and project development in .NET, Angular, React, and Azure.",
     url: "https://fullstackjobsupport.com",
+      alternates: {
+    canonical: "https://fullstackjobsupport.com",
+  },
+
     siteName: "Sachin Verma Portfolio",
     images: [
       {

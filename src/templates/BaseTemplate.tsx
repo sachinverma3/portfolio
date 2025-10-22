@@ -9,6 +9,7 @@ export const BaseTemplate = (props: {
   return (
     <>
       <Head>
+         <link rel="canonical" href="https://fullstackjobsupport.com" />
         {/* Basic Meta */}
         <title>Sachin Verma | Full-Stack .NET, Angular, React, Azure Developer</title>
         <meta
