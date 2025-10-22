@@ -119,12 +119,33 @@ export default function HomePage() {
       <section id="about" className="py-16 px-6 border-t border-gray-200 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-xl font-semibold mb-6">About Me</h3>
-          <p className="text-gray-700 leading-relaxed text-lg text-left">
-            I’m a freelance full-stack developer with over <strong>10 years</strong> of
-            experience in designing, developing, and supporting enterprise-level
-            applications. I specialize in <strong>.NET, Angular, React, Azure, SQL Server</strong>,
-            and <strong>PostgreSQL</strong>.
+  <p className="text-gray-700 leading-relaxed text-lg text-left">
+            I’m a freelance full-stack developer with over{" "}
+            <strong>10 years</strong> of experience in designing, developing,
+            and supporting enterprise-level applications. I specialize in{" "}
+            <strong>
+              .NET, Angular, React, Azure, SQL Server,
+            </strong>{" "}
+            and <strong>PostgreSQL</strong>, helping professionals and teams
+            solve real-world technical challenges efficiently.
           </p>
+          <p className="text-gray-700 leading-relaxed text-lg mt-4 text-left">
+            I provide job support, project development, and consulting services,
+            focusing on delivering scalable, high-performance, and maintainable
+            solutions. With deep hands-on experience across backend, frontend,
+            and cloud technologies, I assist in both individual mentoring and
+            end-to-end project execution.
+          </p>
+
+          <ul className="mt-6 text-gray-700 text-left list-disc list-inside space-y-2">
+            <li>Debugging and enhancing existing applications</li>
+            <li>Designing scalable APIs and microservices</li>
+            <li>Cloud deployment and integration (Azure)</li>
+            <li>UI/UX development using Angular or React</li>
+            <li>
+              Database design and performance tuning (SQL Server, PostgreSQL)
+            </li>
+          </ul>
         </div>
       </section>
 
