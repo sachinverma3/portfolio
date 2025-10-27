@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import ContactCard from "@/components/ContactCard";
 import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
 
 export default function HomePage() {
@@ -25,175 +24,204 @@ export default function HomePage() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 text-gray-600 text-sm">
-          <a href="#about" className="hover:text-gray-900 transition-colors">
-            About
-          </a>
-          <a href="#skills" className="hover:text-gray-900 transition-colors">
-            Skills
-          </a>
-          <a href="#services" className="hover:text-gray-900 transition-colors">
-            Services
-          </a>
-          <a href="#contact" className="hover:text-gray-900 transition-colors">
-            Contact
-          </a>
+          {["About", "Skills", "Services", "Contact"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="hover:text-gray-900 transition-colors"
+            >
+              {item}
+            </a>
+          ))}
         </nav>
       </header>
 
-      {/* ✅ Mobile Toggle Menu (Drawer Style with Click Outside Close) */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 flex justify-end"
-          onClick={() => setMenuOpen(false)} // 👈 Clicking overlay closes menu
+          onClick={() => setMenuOpen(false)}
         >
           <div
             className="bg-white w-2/3 max-w-xs h-full shadow-xl p-6 flex flex-col space-y-6 text-gray-700 text-lg animate-slideIn"
-            onClick={(e) => e.stopPropagation()} // 👈 Prevent close when clicking inside
+            onClick={(e) => e.stopPropagation()}
           >
-            <a
-              href="#about"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-600 transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#skills"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-600 transition-colors"
-            >
-              Skills
-            </a>
-            <a
-              href="#services"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-600 transition-colors"
-            >
-              Services
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-600 transition-colors"
-            >
-              Contact
-            </a>
+            {["About", "Skills", "Services", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       )}
 
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center py-20 px-6">
-        <div className="bg-white shadow-xl rounded-2xl p-10 max-w-md mx-auto transition-all duration-300 hover:shadow-2xl">
-          <div className="flex justify-center mb-6">
-            <Image
-              src="/profile.jpg"
-              alt="Sachin Verma"
-              width={120}
-              height={120}
-              className="rounded-full shadow-md border-4 border-white"
-            />
-          </div>
+        <div className="bg-white shadow-xl rounded-2xl p-10 max-w-md mx-auto hover:shadow-2xl transition-all duration-300">
+          <Image
+            src="/profile.jpg"
+            alt="Sachin Verma"
+            width={120}
+            height={120}
+            className="rounded-full shadow-md border-4 border-white mb-6"
+          />
           <h2 className="text-2xl font-bold mb-2">Sachin Verma</h2>
-          <p className="text-gray-600 text-sm mb-4">@sachinverma769</p>
+          <p className="text-gray-600 text-sm mb-2">@sachinverma769</p>
           <p className="text-gray-600 text-sm mb-6">
-            Freelance Full-Stack Developer — .NET | Angular | React | Azure
+            Freelance Full-Stack Developer — .NET | Angular | React | Azure | SQL Server
           </p>
 
-          {/* WhatsApp Button */}
-          <div className="flex justify-center mt-6">
-            <a
-              href="https://wa.me/919459873319"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors"
-            >
-              <FaWhatsapp className="text-xl" />
-              Chat on WhatsApp
-            </a>
-          </div>
+          <a
+            href="https://wa.me/919459873319"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors justify-center"
+          >
+            <FaWhatsapp className="text-xl" />
+            Chat on WhatsApp
+          </a>
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-16 px-6 border-t border-gray-200 bg-white">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-xl font-semibold mb-6">About Me</h3>
-  <p className="text-gray-700 leading-relaxed text-lg text-left">
-            I’m a freelance full-stack developer with over{" "}
-            <strong>10 years</strong> of experience in designing, developing,
-            and supporting enterprise-level applications. I specialize in{" "}
-            <strong>
-              .NET, Angular, React, Azure, SQL Server,
-            </strong>{" "}
-            and <strong>PostgreSQL</strong>, helping professionals and teams
-            solve real-world technical challenges efficiently.
+          <h3 className="text-2xl font-semibold mb-6 text-gray-900">About Me</h3>
+
+          <p className="text-gray-700 leading-relaxed text-lg text-left">
+            I’m <strong>Sachin Verma</strong>, a <strong>freelance full-stack developer</strong> with over 
+            <strong> 10 years of experience</strong> in building secure, scalable, and high-performance 
+            web applications using <strong>.NET, Angular, React, SQL Server, Azure,</strong> and 
+            <strong> PostgreSQL</strong>. I offer <strong>remote job support, project consulting,</strong> 
+            and <strong>technical mentoring</strong> for professionals and teams worldwide.
           </p>
+
           <p className="text-gray-700 leading-relaxed text-lg mt-4 text-left">
-            I provide job support, project development, and consulting services,
-            focusing on delivering scalable, high-performance, and maintainable
-            solutions. With deep hands-on experience across backend, frontend,
-            and cloud technologies, I assist in both individual mentoring and
-            end-to-end project execution.
+            My focus is delivering end-to-end solutions using <strong>ASP.NET Core, Angular, React, REST APIs,</strong> 
+            and <strong>Microsoft Azure</strong>. I help clients with <strong>backend optimization, database design,</strong> 
+            and <strong>cloud deployments</strong>, ensuring fast, maintainable, and production-ready code.
           </p>
 
           <ul className="mt-6 text-gray-700 text-left list-disc list-inside space-y-2">
-            <li>Debugging and enhancing existing applications</li>
-            <li>Designing scalable APIs and microservices</li>
-            <li>Cloud deployment and integration (Azure)</li>
-            <li>UI/UX development using Angular or React</li>
-            <li>
-              Database design and performance tuning (SQL Server, PostgreSQL)
-            </li>
+            <li>Debugging and enhancing .NET, Angular, and React apps</li>
+            <li>Designing APIs and microservices architecture</li>
+            <li>Implementing CI/CD and Azure cloud integration</li>
+            <li>Developing responsive UIs with Angular and React</li>
+            <li>Database design and tuning (SQL Server, PostgreSQL)</li>
+            <li>One-on-one job support and mentoring sessions</li>
           </ul>
         </div>
       </section>
 
-      {/* Skills */}
+      {/* Skills Section */}
       <section id="skills" className="py-16 px-6 bg-gray-50 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-xl font-semibold mb-6 text-center">⚙️ Technical Skills</h3>
+          <h2 className="text-2xl font-semibold mb-6 text-center text-gray-900">
+            ⚙️ Technical Skills & Expertise
+          </h2>
+
+          <p className="text-gray-700 leading-relaxed text-lg mb-8 text-left">
+            I specialize in <strong>.NET, Angular, React, SQL Server, Azure,</strong> and 
+            <strong> PostgreSQL</strong>, providing professional job support and real-world 
+            project solutions for developers and teams globally.
+          </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 text-base">
             <div>
-              <strong>Frontend:</strong> Angular, React, TypeScript, HTML, CSS, JavaScript
+              <h3 className="font-semibold mb-1">Frontend Development</h3>
+              <p>Angular, React, TypeScript, HTML5, CSS3 — building fast, maintainable UIs.</p>
             </div>
             <div>
-              <strong>Backend:</strong> ASP.NET Core, C#, Web API, Entity Framework
+              <h3 className="font-semibold mb-1">Backend Development</h3>
+              <p>ASP.NET Core, C#, Web API, Entity Framework — creating scalable, secure systems.</p>
             </div>
             <div>
-              <strong>Database:</strong> SQL Server, PostgreSQL
+              <h3 className="font-semibold mb-1">Database Management</h3>
+              <p>SQL Server & PostgreSQL — schema design, optimization, performance tuning.</p>
             </div>
             <div>
-              <strong>Cloud:</strong> Microsoft Azure
+              <h3 className="font-semibold mb-1">Cloud & DevOps</h3>
+              <p>Azure — deployment, CI/CD pipelines, and infrastructure optimization.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services Section */}
       <section id="services" className="py-16 px-6 bg-white border-t border-gray-200">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-xl font-semibold mb-6">🤝 Services I Offer</h3>
-          <ul className="text-gray-700 text-left list-disc list-inside space-y-2">
-            <li>Remote job support (daily/weekly basis)</li>
-            <li>Freelance project development (end-to-end or modular)</li>
-            <li>Code reviews and performance optimization</li>
-            <li>Troubleshooting and mentorship for ongoing projects</li>
+          <h3 className="text-2xl font-semibold mb-6 text-gray-900">Services I Offer</h3>
+          <p className="text-gray-700 leading-relaxed text-lg mb-8 text-left">
+            I offer <strong>freelance development</strong>, <strong>remote job support</strong>, 
+            and <strong>technical consulting</strong> for developers and teams working on 
+            enterprise applications and real-world projects.
+          </p>
+
+          <ul className="text-gray-700 text-left list-disc list-inside space-y-3">
+            <li><strong>.NET Consulting:</strong> ASP.NET Core, Web API, and backend architecture</li>
+            <li><strong>Angular & React Development:</strong> Modern, responsive, and dynamic UIs</li>
+            <li><strong>Azure Cloud & DevOps:</strong> Deployment, CI/CD setup, and optimization</li>
+            <li><strong>SQL Server & PostgreSQL:</strong> Database design and performance tuning</li>
+            <li><strong>Code Review & Debugging:</strong> Improve reliability and maintainability</li>
+            <li><strong>Remote Job Support:</strong> Real-time one-on-one guidance and troubleshooting</li>
           </ul>
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100 border-t border-gray-200">
-        <ContactCard />
+        <div className="max-w-3xl mx-auto text-center">
+          <h3 className="text-2xl font-semibold mb-6 text-gray-900">Get in Touch</h3>
+          <p className="text-gray-700 leading-relaxed text-lg mb-8 text-left">
+            Need help with <strong>.NET, Angular, React, SQL Server, PostgreSQL,</strong> or 
+            <strong> Azure?</strong> I provide <strong>job support, consulting, and freelance development</strong> 
+            for professionals and teams across the USA, Canada, and globally.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
+            <a
+              href="https://wa.me/919459873319"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors shadow-lg"
+            >
+              <FaWhatsapp className="text-xl" />
+              Chat on WhatsApp
+            </a>
+
+            <a
+              href="mailto:support@fullstackjobsupport.com"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors shadow-lg"
+            >
+              Send an Email
+            </a>
+          </div>
+
+          <p className="text-gray-600 mt-10 text-sm">
+            🌐 <strong>Website:</strong>{" "}
+            <a
+              href="https://fullstackjobsupport.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              fullstackjobsupport.com
+            </a>
+          </p>
+        </div>
       </section>
 
       {/* Footer */}
       <footer className="text-center py-8 text-sm text-gray-500 border-t">
-        © {new Date().getFullYear()} Sachin Verma — all rights reserved.
+        © {new Date().getFullYear()} Sachin Verma — All rights reserved.
       </footer>
 
-      {/* Floating WhatsApp Icon */}
+      {/* Floating WhatsApp Button */}
       <a
         href="https://wa.me/919459873319"
         target="_blank"
@@ -204,7 +232,7 @@ export default function HomePage() {
         <FaWhatsapp className="text-3xl" />
       </a>
 
-      {/* ✅ Small Animation for Menu */}
+      {/* Animation */}
       <style jsx>{`
         @keyframes slideIn {
           from {
