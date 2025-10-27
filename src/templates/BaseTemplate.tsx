@@ -14,8 +14,9 @@ export const BaseTemplate = (props: {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="canonical" href="https://fullstackjobsupport.com" />
-        <link rel="alternate" href="https://fullstackjobsupport.com" hreflang="en" />
-        <link rel="alternate" href="https://fullstackjobsupport.com" hreflang="x-default" />
+        <link rel="alternate" href="https://fullstackjobsupport.com" hrefLang="en" />
+        <link rel="alternate" href="https://fullstackjobsupport.com" hrefLang="x-default" />
+
 
         <title>Sachin Verma | Full-Stack .NET, Angular, React, Azure Developer</title>
         <meta
